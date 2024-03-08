@@ -1,27 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { FrameRequest, getFrameMessage } from '@coinbase/onchainkit'; 
+
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
-  const searchParams = req.nextUrl.searchParams
-  console.log(searchParams)
-  return new NextResponse(`${searchParams}`)
-  // const id:any = searchParams.get("id")
-  // const idAsNumber = parseInt(id)
+  const frameRequest: FrameRequest = await req.json();
+  const { isValid, message } = await getFrameMessage(frameRequest); 
+ console.log(message)
+  if (isValid) {
+    console.log(message)
+  }
 
-  // const nextId = idAsNumber + 1
-
-  // if(idAsNumber === 7){
-  //     return new NextResponse(`<!DOCTYPE html><html><head>
-  //   <title>This is frame 7</title>
-  //   <meta property="fc:frame" content="vNext" />
-  //   <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/Qme4FXhoxHHfyzTfRxSpASbMF8kajLEPkRQWhwWu9pkUjm/7.png" />
-  //   <meta property="fc:frame:button:1" content="Cosmic Cowboys" />
-  //   <meta property="fc:frame:button:1:action" content="post_redirect" />
-  //   <meta property="fc:frame:button:2" content="Blog post Tutorial" />
-  //   <meta property="fc:frame:button:2:action" content="post_redirect" />
-  //   <meta property="fc:frame:button:3" content="Video Tutorial" />
-  //   <meta property="fc:frame:button:3:action" content="post_redirect" />
-  //   <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
-  // </head></html>`);
+  // const searchParams = req.nextUrl.searchParams
+      return new NextResponse(`<!DOCTYPE html><html><head>
+    <title>$ROYAL Allocation</title>
+    <meta property="fc:frame" content="vNext" />
+    <meta property="fc:frame:image" content="https://cdn.discordapp.com/attachments/892878888445804545/1083049214948409424/FqJkIcSWAAsuyMz.png?ex=65fb012e&is=65e88c2e&hm=fc63d1ad4854e2bb446235dc2f82a6cad846dde1e06457a53ab5ec325a8d608c&" />
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/892878888445804545/1083049214948409424/FqJkIcSWAAsuyMz.png?ex=65fb012e&is=65e88c2e&hm=fc63d1ad4854e2bb446235dc2f82a6cad846dde1e06457a53ab5ec325a8d608c&" />
+  </head></html>`);
   // } else {
   // return new NextResponse(`<!DOCTYPE html><html><head>
   //   <title>This is frame ${id}</title>
