@@ -7,8 +7,8 @@ const frameMetadata = getFrameMetadata({
       label: "Check allocation"
     }
   ],
-  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/Qme4FXhoxHHfyzTfRxSpASbMF8kajLEPkRQWhwWu9pkUjm/0.png`,
-  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=1`,
+  image: `https://cdn.discordapp.com/attachments/892878888445804545/1083049214948409424/FqJkIcSWAAsuyMz.png?ex=65fb012e&is=65e88c2e&hm=fc63d1ad4854e2bb446235dc2f82a6cad846dde1e06457a53ab5ec325a8d608c&`,
+  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame`,
 });
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '$ROYAL Token',
     description: 'A frame to see your allocation of $ROYAL',
-    images: [`${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/Qme4FXhoxHHfyzTfRxSpASbMF8kajLEPkRQWhwWu9pkUjm/0.png`],
+    images: [`https://cdn.discordapp.com/attachments/892878888445804545/1083049214948409424/FqJkIcSWAAsuyMz.png?ex=65fb012e&is=65e88c2e&hm=fc63d1ad4854e2bb446235dc2f82a6cad846dde1e06457a53ab5ec325a8d608c&`],
   },
   other: {
     ...frameMetadata,
